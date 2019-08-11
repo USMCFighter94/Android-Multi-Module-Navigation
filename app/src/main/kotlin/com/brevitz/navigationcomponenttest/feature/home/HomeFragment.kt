@@ -66,4 +66,9 @@ class HomeFragment : Fragment() {
             }
             .addTo(viewModel.disposables)
     }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.stop()
+    }
 }
