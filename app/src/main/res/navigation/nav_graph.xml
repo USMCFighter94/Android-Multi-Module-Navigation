@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.brevitz.navigationcomponenttest.HomeFragment"
+        android:name="com.brevitz.navigationcomponenttest.feature.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home">
         <deepLink
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/subreddit"
-        android:name="com.brevitz.navigationcomponenttest.SubRedditFragment"
+        android:name="com.brevitz.navigationcomponenttest.feature.subreddit.SubRedditFragment"
         android:label="@string/title_subreddit"
         tools:layout="@layout/fragment_subreddit">
         <deepLink
@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/account"
-        android:name="com.brevitz.navigationcomponenttest.AccountFragment"
+        android:name="com.brevitz.navigationcomponenttest.feature.account.AccountFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account">
         <deepLink
