@@ -86,3 +86,9 @@ object Versions {
     internal const val rxKotlin = "2.3.0"
     internal const val timber = "4.7.1"
 }
+
+object Modules {
+    const val core = ":core"
+    const val home = ":home"
+    const val subreddit = ":subreddit"
+}

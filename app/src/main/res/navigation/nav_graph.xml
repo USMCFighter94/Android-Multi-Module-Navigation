@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/subreddit"
-        android:name="com.brevitz.navigationcomponenttest.feature.subreddit.SubRedditFragment"
+        android:name="com.brevitz.navigationcomponenttest.subreddit.SubRedditFragment"
         android:label="@string/title_subreddit"
         tools:layout="@layout/fragment_subreddit">
         <deepLink

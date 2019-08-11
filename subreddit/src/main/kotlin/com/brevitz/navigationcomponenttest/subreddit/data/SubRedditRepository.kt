@@ -1,4 +1,4 @@
-package com.brevitz.navigationcomponenttest.data.home
+package com.brevitz.navigationcomponenttest.subreddit.data
 
 import com.brevitz.navigationcomponenttest.core.data.mapToRemoteState
 import com.brevitz.navigationcomponenttest.core.domain.Posts
@@ -9,9 +9,9 @@ import io.reactivex.Observable
 import timber.log.Timber
 import javax.inject.Inject
 
-class HomeRepository @Inject constructor(private val api: RedditApi) {
-    fun getData(after: String): Observable<RemoteState<Posts>> =
-        api.getFrontPage(after)
+class SubRedditRepository @Inject constructor(private val api: RedditApi) {
+    fun getData(subReddit: String, after: String): Observable<RemoteState<Posts>> =
+        api.getSubreddit(subReddit, after)
             .mapToRemoteState()
             .mapToData { it.toPosts() }
             .doOnError { Timber.e(it) }

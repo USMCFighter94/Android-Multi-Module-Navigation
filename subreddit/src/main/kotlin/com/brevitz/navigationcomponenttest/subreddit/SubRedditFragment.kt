@@ -1,4 +1,4 @@
-package com.brevitz.navigationcomponenttest.feature.home
+package com.brevitz.navigationcomponenttest.subreddit
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,38 +7,41 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.brevitz.navigationcomponenttest.R
 import com.brevitz.navigationcomponenttest.core.CoreInjectHelper
 import com.brevitz.navigationcomponenttest.core.PostController
 import com.brevitz.navigationcomponenttest.core.domain.ViewState
 import com.brevitz.navigationcomponenttest.core.hide
 import com.brevitz.navigationcomponenttest.core.show
+import com.brevitz.navigationcomponenttest.subreddit.data.SubRedditViewModel
 import com.google.android.material.snackbar.Snackbar
 import io.reactivex.rxkotlin.addTo
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_subreddit.*
 import kotlinx.android.synthetic.main.layout_loading.*
 import javax.inject.Inject
 
-class HomeFragment : Fragment() {
+class SubRedditFragment : Fragment() {
     @Inject
-    lateinit var viewModel: HomeViewModel
+    lateinit var viewModel: SubRedditViewModel
     private val controller = PostController()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        DaggerHomeComponent
+        DaggerSubRedditComponent
             .builder()
             .coreComponent(CoreInjectHelper.provideCoreComponent(requireContext().applicationContext))
             .build()
             .inject(this)
+
+        viewModel.subreddit = arguments?.getString("subreddit").orEmpty()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
-        inflater.inflate(R.layout.fragment_home, container, false)
+        inflater.inflate(R.layout.fragment_subreddit, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        homeRecyclerView.apply {
+
+        subredditRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             isNestedScrollingEnabled = true
             adapter = controller.adapter
@@ -59,7 +62,7 @@ class HomeFragment : Fragment() {
                     }
                     is ViewState.Error -> {
                         Snackbar.make(
-                            homeRecyclerView,
+                            subredditRecyclerView,
                             it.error.localizedMessage.orEmpty(),
                             Snackbar.LENGTH_LONG
                         ).show()

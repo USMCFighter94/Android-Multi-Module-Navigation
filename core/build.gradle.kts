@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
@@ -9,11 +9,8 @@ android {
     compileSdkVersion(Deps.Sdk.compile)
 
     defaultConfig {
-        applicationId = "com.brevitz.navigationcomponenttest"
         minSdkVersion(Deps.Sdk.min)
         targetSdkVersion(Deps.Sdk.target)
-        versionCode = Deps.versionCode
-        versionName = Deps.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -28,9 +25,6 @@ android {
 }
 
     dependencies {
-        implementation(project(Modules.core))
-        implementation(project(Modules.subreddit))
-
         implementation(Deps.appCompat)
         implementation(Deps.cardView)
         implementation(Deps.constraintLayout)
@@ -44,16 +38,11 @@ android {
         implementation(Deps.kotlin)
         implementation(Deps.material)
         implementation(Deps.moshi)
-        implementation(Deps.Navigation.fragment)
-        implementation(Deps.Navigation.ui)
         implementation(Deps.loggingInterceptor)
         implementation(Deps.recyclerView)
         implementation(Deps.Retrofit.core)
         implementation(Deps.Retrofit.moshiConverter)
         implementation(Deps.Retrofit.rxJavaAdapter)
-        implementation(Deps.rxBinding)
-        implementation(Deps.RxJava.android)
         implementation(Deps.RxJava.core)
-        implementation(Deps.RxJava.kotlin)
         implementation(Deps.timber)
     }

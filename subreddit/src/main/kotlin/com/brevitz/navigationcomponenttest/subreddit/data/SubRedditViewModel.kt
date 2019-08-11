@@ -1,22 +1,23 @@
-package com.brevitz.navigationcomponenttest.feature.home
+package com.brevitz.navigationcomponenttest.subreddit.data
 
 import com.brevitz.navigationcomponenttest.core.ViewModel
 import com.brevitz.navigationcomponenttest.core.domain.Posts
 import com.brevitz.navigationcomponenttest.core.domain.ViewState
 import com.brevitz.navigationcomponenttest.core.domain.doOnSuccess
 import com.brevitz.navigationcomponenttest.core.domain.mapToViewState
-import com.brevitz.navigationcomponenttest.data.home.HomeRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class HomeViewModel @Inject constructor(private val repository: HomeRepository) :
+class SubRedditViewModel @Inject constructor(private val repository: SubRedditRepository) :
     ViewModel<ViewState<Posts, Throwable>>(ViewState.Loading) {
+
+    var subreddit = ""
     private var startingPost = ""
 
     fun getPosts() {
-        repository.getData(startingPost)
+        repository.getData(subreddit, startingPost)
             .mapToViewState()
             .doOnSuccess { startingPost = it.after }
             .observeOn(AndroidSchedulers.mainThread())
