@@ -11,8 +11,7 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class HomeViewModel @Inject constructor(private val repository: HomeRepository) :
-    ViewModel<ViewState<Posts, Throwable>>(ViewState.Loading) {
+class HomeViewModel @Inject constructor(private val repository: HomeRepository) : ViewModel<Posts, Throwable>() {
     private var startingPost = ""
 
     fun getPosts() {

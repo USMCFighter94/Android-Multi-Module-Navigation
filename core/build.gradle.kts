@@ -39,7 +39,6 @@ android {
         implementation(Deps.material)
         implementation(Deps.moshi)
         implementation(Deps.loggingInterceptor)
-        implementation(Deps.recyclerView)
         implementation(Deps.Retrofit.core)
         implementation(Deps.Retrofit.moshiConverter)
         implementation(Deps.Retrofit.rxJavaAdapter)

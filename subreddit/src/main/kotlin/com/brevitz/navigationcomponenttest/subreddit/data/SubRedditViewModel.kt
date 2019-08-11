@@ -10,9 +10,7 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class SubRedditViewModel @Inject constructor(private val repository: SubRedditRepository) :
-    ViewModel<ViewState<Posts, Throwable>>(ViewState.Loading) {
-
+class SubRedditViewModel @Inject constructor(private val repository: SubRedditRepository) : ViewModel<Posts, Throwable>() {
     var subreddit = ""
     private var startingPost = ""
 

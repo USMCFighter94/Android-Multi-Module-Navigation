@@ -26,13 +26,10 @@ class SubRedditFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        DaggerSubRedditComponent
-            .builder()
+        DaggerSubRedditComponent.builder()
             .coreComponent(CoreInjectHelper.provideCoreComponent(requireContext().applicationContext))
             .build()
             .inject(this)
-
-        viewModel.subreddit = arguments?.getString("subreddit").orEmpty()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
@@ -45,9 +42,10 @@ class SubRedditFragment : Fragment() {
             layoutManager = LinearLayoutManager(context)
             isNestedScrollingEnabled = true
             adapter = controller.adapter
-            addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.HORIZONTAL))
+            addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         }
 
+        viewModel.subreddit = arguments?.getString("subreddit").orEmpty()
         viewModel.getPosts()
     }
 

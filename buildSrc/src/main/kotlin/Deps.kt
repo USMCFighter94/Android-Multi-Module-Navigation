@@ -48,9 +48,9 @@ object Deps {
     val rxBinding = dependency("com.jakewharton.rxbinding2:rxbinding-kotlin", Versions.rxBinding)
 
     object Sdk {
-        val min = 23
-        val compile = 29
-        val target = 29
+        const val min = 23
+        const val compile = 29
+        const val target = 29
     }
 
     const val versionCode = 1

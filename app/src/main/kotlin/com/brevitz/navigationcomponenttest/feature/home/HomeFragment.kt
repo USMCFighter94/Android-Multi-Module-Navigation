@@ -26,8 +26,7 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        DaggerHomeComponent
-            .builder()
+        DaggerHomeComponent.builder()
             .coreComponent(CoreInjectHelper.provideCoreComponent(requireContext().applicationContext))
             .build()
             .inject(this)
