@@ -7,8 +7,9 @@ import com.brevitz.navigationcomponenttest.domain.RemoteState
 import com.brevitz.navigationcomponenttest.domain.mapToData
 import io.reactivex.Observable
 import timber.log.Timber
+import javax.inject.Inject
 
-class HomeRepository(private val api: RedditApi) {
+class HomeRepository @Inject constructor(private val api: RedditApi) {
     fun getData(after: String): Observable<RemoteState<Posts>> =
         api.getFrontPage(after)
             .mapToRemoteState()

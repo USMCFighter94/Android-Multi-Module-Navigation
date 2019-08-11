@@ -20,7 +20,7 @@ data class RedditResponse(val data: DataResponse) {
                 child.downVotes
             )
         },
-        data.before,
-        data.after
+        data.before.orEmpty(),
+        data.after.orEmpty()
     )
 }

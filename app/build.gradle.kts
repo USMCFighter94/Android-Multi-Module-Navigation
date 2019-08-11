@@ -29,6 +29,7 @@ android {
 
     dependencies {
         implementation(Deps.appCompat)
+        implementation(Deps.cardView)
         implementation(Deps.constraintLayout)
         implementation(Deps.coreKtx)
         kapt(Deps.Dagger.compiler)
@@ -42,6 +43,7 @@ android {
         implementation(Deps.moshi)
         implementation(Deps.Navigation.fragment)
         implementation(Deps.Navigation.ui)
+        implementation(Deps.loggingInterceptor)
         implementation(Deps.recyclerView)
         implementation(Deps.Retrofit.core)
         implementation(Deps.Retrofit.moshiConverter)

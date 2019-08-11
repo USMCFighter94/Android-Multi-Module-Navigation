@@ -1,5 +1,6 @@
 object Deps {
     val appCompat = dependency("androidx.appcompat:appcompat", Versions.appCompat)
+    val cardView = dependency("androidx.cardview:cardview", Versions.cardView)
     val constraintLayout = dependency("androidx.constraintlayout:constraintlayout", Versions.constraintLayout)
     val coreKtx = dependency("androidx.core:core-ktx", Versions.coreKtx)
 
@@ -27,6 +28,8 @@ object Deps {
         val fragment = withArtifact("navigation-fragment-ktx", Versions.navigation)
         val ui = withArtifact("navigation-ui-ktx", Versions.navigation)
     }
+
+    val loggingInterceptor = dependency("com.squareup.okhttp3:logging-interceptor", Versions.okhttp)
 
     val recyclerView = dependency("androidx.recyclerview:recyclerview", Versions.recyclerView)
 
@@ -65,6 +68,7 @@ object Versions {
     const val kotlin = "1.3.41"
 
     internal const val appCompat = "1.0.0"
+    internal const val cardView = "1.0.0"
     internal const val constraintLayout = "2.0.0-beta2"
     internal const val coreKtx = "1.0.0"
     internal const val dagger = "2.22.1"
@@ -73,6 +77,7 @@ object Versions {
     internal const val material = "1.0.0"
     internal const val moshi = "1.8.0"
     internal const val navigation = "1.0.0-alpha06"
+    internal const val okhttp = "3.14.1"
     internal const val recyclerView = "1.0.0"
     internal const val retrofit = "2.5.0"
     internal const val rxAndroid = "2.1.1"

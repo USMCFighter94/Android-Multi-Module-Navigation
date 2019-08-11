@@ -3,6 +3,7 @@ package com.brevitz.navigationcomponenttest.feature.home
 import com.brevitz.navigationcomponenttest.data.home.HomeRepository
 import com.brevitz.navigationcomponenttest.domain.Posts
 import com.brevitz.navigationcomponenttest.domain.ViewState
+import com.brevitz.navigationcomponenttest.domain.doOnSuccess
 import com.brevitz.navigationcomponenttest.domain.mapToViewState
 import com.brevitz.navigationcomponenttest.feature.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -17,6 +18,7 @@ class HomeViewModel @Inject constructor(private val repository: HomeRepository) 
     fun getPosts() {
         repository.getData(startingPost)
             .mapToViewState()
+            .doOnSuccess { startingPost = it.after }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe(

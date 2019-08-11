@@ -16,3 +16,10 @@ fun <T : Any> Observable<RemoteState<T>>.mapToViewState(): Observable<ViewState<
             is RemoteState.Loading -> ViewState.Loading
         }
     }
+
+fun <T : Any> Observable<ViewState<T, Throwable>>.doOnSuccess(f: (T) -> Unit): Observable<ViewState<T, Throwable>> =
+    doOnNext {
+        when (it) {
+            is ViewState.Success -> f(it.data)
+        }
+    }
