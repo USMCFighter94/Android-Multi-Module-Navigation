@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.brevitz.navigationcomponenttest.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <deepLink
+            android:id="@+id/homeDeepLink"
+            android:autoVerify="true"
+            app:uri="https://kolin.dev/" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/subreddit"
+        android:name="com.brevitz.navigationcomponenttest.SubRedditFragment"
+        android:label="@string/title_subreddit"
+        tools:layout="@layout/fragment_subreddit">
+        <deepLink
+            android:id="@+id/subredditDeepLink"
+            android:autoVerify="true"
+            app:uri="https://kolin.dev/{subreddit}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/account"
+        android:name="com.brevitz.navigationcomponenttest.AccountFragment"
+        android:label="@string/title_account"
+        tools:layout="@layout/fragment_account">
+        <deepLink
+            android:id="@+id/accountDeepLink"
+            android:autoVerify="true"
+            app:uri="https://kolin.dev/account" />
+    </fragment>
+
+</navigation>
