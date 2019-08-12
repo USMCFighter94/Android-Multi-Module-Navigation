@@ -1,11 +1,11 @@
-package com.brevitz.navigationcomponenttest.feature.home
+package com.brevitz.navigationcomponenttest.home
 
 import com.brevitz.navigationcomponenttest.core.CoreComponent
 import com.brevitz.navigationcomponenttest.core.FeatureScope
 import dagger.Component
 
-@Component(dependencies = [CoreComponent::class])
 @FeatureScope
+@Component(dependencies = [CoreComponent::class])
 interface HomeComponent {
     fun inject(fragment: HomeFragment)
 }

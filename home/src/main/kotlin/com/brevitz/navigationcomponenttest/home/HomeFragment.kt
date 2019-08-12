@@ -1,4 +1,4 @@
-package com.brevitz.navigationcomponenttest.feature.home
+package com.brevitz.navigationcomponenttest.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.brevitz.navigationcomponenttest.R
 import com.brevitz.navigationcomponenttest.core.CoreInjectHelper
 import com.brevitz.navigationcomponenttest.core.PostController
 import com.brevitz.navigationcomponenttest.core.domain.ViewState

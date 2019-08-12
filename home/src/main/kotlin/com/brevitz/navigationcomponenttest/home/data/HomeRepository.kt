@@ -1,4 +1,4 @@
-package com.brevitz.navigationcomponenttest.data.home
+package com.brevitz.navigationcomponenttest.home.data
 
 import com.brevitz.navigationcomponenttest.core.data.mapToRemoteState
 import com.brevitz.navigationcomponenttest.core.domain.Posts

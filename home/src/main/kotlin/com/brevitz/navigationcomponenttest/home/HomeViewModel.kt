@@ -1,11 +1,11 @@
-package com.brevitz.navigationcomponenttest.feature.home
+package com.brevitz.navigationcomponenttest.home
 
 import com.brevitz.navigationcomponenttest.core.ViewModel
 import com.brevitz.navigationcomponenttest.core.domain.Posts
 import com.brevitz.navigationcomponenttest.core.domain.ViewState
 import com.brevitz.navigationcomponenttest.core.domain.doOnSuccess
 import com.brevitz.navigationcomponenttest.core.domain.mapToViewState
-import com.brevitz.navigationcomponenttest.data.home.HomeRepository
+import com.brevitz.navigationcomponenttest.home.data.HomeRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
